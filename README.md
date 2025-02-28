@@ -97,12 +97,9 @@ For projects without a `requirements.txt` file, SMTpip provides an alternative w
 
 *Refer to Figure (b) for a visual representation.*
 
-Figure (a)
+Figure (a) and (b)
+![Image](https://github.com/user-attachments/assets/08cf59ca-bcd7-40bb-80d7-8eccd74f0a76)
 
-![Image](https://github.com/user-attachments/assets/f4a0a0ab-4d4b-4c50-b524-de5ddfe41402)
-
-Figure (b)
-![Image](https://github.com/user-attachments/assets/dedc2cc6-ba00-4d34-96a1-aadd30054181)
 ## Figures
 
 - **Figure (a)**: SMTpip processes an existing `requirements.txt` file to generate an `install_scripts.txt` file containing compatible dependency versions.
