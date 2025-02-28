@@ -17,9 +17,7 @@ SMTpip is open-source and hosted on GitHub. You can access and download the tool
 Ensure the following requirements are met before using SMTpip:
 
 - **Python**: Version 3.8 or later.
-- **Required Packages**:
-  - `pipreqs==0.5.0`
-  - `z3-solver==4.13.3.0`
+
 
 ### Installation Instructions
 
