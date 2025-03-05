@@ -98,7 +98,7 @@ For projects without a `requirements.txt` file, SMTpip provides an alternative w
 *Refer to Figure (b) for a visual representation.*
 
 Figure (a) and (b)
-![Image](https://github.com/user-attachments/assets/08cf59ca-bcd7-40bb-80d7-8eccd74f0a76)
+![Image](https://github.com/user-attachments/assets/b7acebf2-1175-41db-947a-f1582978e5a0)
 
 ## Figures
 
