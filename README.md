@@ -10,7 +10,7 @@ SMTpip is a powerful tool designed to assist developers in resolving dependency 
 
 SMTpip is open-source and hosted on GitHub. You can access and download the tool from the following link:
 
-[SMTpip GitHub Repository](https://github.com/Sakib635/SMTpip-tool.git)
+https://github.com/SMTpip/SMTpip_tool.git
 
 ### System Requirements
 
