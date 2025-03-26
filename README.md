@@ -31,7 +31,7 @@ git clone https://github.com/SMTpip/SMTpip_tool.git
 pip install -r requirements.txt
 ```
 
-Once installed, Extract the KGraph.json in the sane directory. SMTpip is ready to use.
+Once installed, Extract the KGraph.json in the same directory. SMTpip is ready to use.
 
 
 ## How to Use SMTpip
