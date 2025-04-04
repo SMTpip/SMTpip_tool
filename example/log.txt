@@ -1,0 +1,1 @@
+{'packaging': "", 'more-itertools': "", 'pyparsing': "", 'build': "", 'zipp': "", 'six': "1.16.0", 'appdirs': "", 'tomli': "", 'pip-tools': "4.4.0", 'attrs': "", 'pep517': "", 'toml': "", 'pytoml': "", 'future-fstrings': "", 'setuptools': "", 'wheel': "", 'click': "6.6", 'pip': ""}

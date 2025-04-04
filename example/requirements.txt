@@ -1,2 +1,2 @@
-oauthlib==2.*
-jupyterhub>=0.8
+click==6.6
+pip-tools>=4.0.0

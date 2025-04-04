@@ -7,7 +7,7 @@ from create_requirements import generate_requirements_txt, read_solution_file
 from dependency import fetch_direct_dependencies, fetch_transitive_dependencies
 from read import read_json_file, read_requirements
 from requirements import parse_requirements
-from smt import generate_smt_expression, smt_solver
+from smt import generate_smt_expression, smt_solver,generate_objective_smt_expression
 
 
 # Import functionalities from python_version_resolver
@@ -87,22 +87,41 @@ def main(directory):
         start_time = time.time()
         direct_dependencies = fetch_direct_dependencies(requirements, projects_data)
         transitive_dependencies = fetch_transitive_dependencies(direct_dependencies, projects_data)
+        # direct_dependencies_file = os.path.join(directory, "direct_dependencies.txt")
+        # with open(direct_dependencies_file, "w") as file:
+        #     file.write(str(direct_dependencies))
+        # logging.info(f"direct_dependencies saved to: {direct_dependencies_file}")
+        
+        # transitive_dependencies_file = os.path.join(directory, "transitive_dependencies.txt")
+        # with open(transitive_dependencies_file, "w") as file:
+        #     file.write(str(transitive_dependencies))
+        # logging.info(f"transitive_dependencies saved to: {transitive_dependencies_file}")       
         end_time = time.time()
         log_execution_time("Fetching dependencies", start_time, end_time)
-
-        # Generate SMT expression
         ctx = Context()
-        start_time = time.time()
         solver = generate_smt_expression(
-            direct_dependencies, transitive_dependencies, ctx, add_soft_clauses=False, minimize_packages=False
-        )
+            direct_dependencies, transitive_dependencies, ctx)
+        # direct_dependencies_file = os.path.join(directory, "direct_dependencies.txt")
+        # with open(direct_dependencies_file, "w") as file:
+        #     file.write(str(direct_dependencies))
+        # logging.info(f"direct_dependencies saved to: {direct_dependencies_file}")
+        
+        # transitive_dependencies_file = os.path.join(directory, "transitive_dependencies.txt")
+        # with open(transitive_dependencies_file, "w") as file:
+        #     file.write(str(transitive_dependencies))
+        # logging.info(f"transitive_dependencies saved to: {transitive_dependencies_file}")
+        
+        start_time = time.time()
+        ## Generate SMT expression
+        solvers = generate_objective_smt_expression(
+            direct_dependencies, transitive_dependencies, ctx, add_soft_clauses=True)     
         end_time = time.time()
-        log_execution_time("Generating SMT expression", start_time, end_time)
+        log_execution_time("Generating SMT expression", start_time, end_time)  
 
         # Save SMT expression
         smt_expression_file = os.path.join(directory, "SMT_expression.txt")
         with open(smt_expression_file, "w") as file:
-            file.write(str(solver))
+            file.write(str(solvers))
         logging.info(f"SMT expression saved to: {smt_expression_file}")
 
         # Solve SMT expression
@@ -113,7 +132,7 @@ def main(directory):
 
         if solution:
             # Save solution
-            solution_file = os.path.join(directory, "string_solution.txt")
+            solution_file = os.path.join(directory, "log.txt")
             with open(solution_file, "w") as file:
                 file.write(str(solution))
             logging.info(f"Solution saved to: {solution_file}")
